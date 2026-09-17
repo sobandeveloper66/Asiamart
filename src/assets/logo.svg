@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%">
+  <defs>
+    <!-- Premium Coral/Red gradient -->
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b7b" />
+      <stop offset="100%" stop-color="#ff2a2a" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Group -->
+  <g transform="translate(10, 10)">
+    <!-- Red/peach Circle Gradient Background -->
+    <circle cx="50" cy="50" r="45" fill="url(#brandGrad)" />
+    
+    <!-- Geometric Torii/A Fusion Cutout -->
+    <g fill="#ffffff">
+      <!-- Upper Curved Roof -->
+      <path d="M 22,33 Q 50,40 78,33 C 82,32 84,36 80,38 Q 50,46 20,38 C 16,36 18,32 22,33 Z" />
+      <!-- Lower Curved Bar -->
+      <path d="M 27,45 Q 50,50 73,45 C 76,44 77,47 74,49 Q 50,54 26,49 C 23,47 24,44 27,45 Z" />
+      <!-- Pillars (forming 'A' shape) -->
+      <path d="M 36,50 L 28,80 C 27,83 31,85 33,83 L 39,51 Z" />
+      <path d="M 64,50 L 72,80 C 73,83 69,85 67,83 L 61,51 Z" />
+      <!-- Crossbar of 'A' -->
+      <rect x="35" y="62" width="30" height="4" rx="2" />
+    </g>
+  </g>
+
+  <!-- Text Group -->
+  <g transform="translate(125, 68)">
+    <text font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="42" font-weight="800" fill="#ffffff" letter-spacing="0.5">Asia</text>
+    <text font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="42" font-weight="800" fill="url(#brandGrad)" x="88" letter-spacing="0.5">Mart</text>
+    <text font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="700" fill="#71717a" x="2" y="24" letter-spacing="3.8">BEST OF ASIA AT INDIAN PRICES</text>
+  </g>
+</svg>

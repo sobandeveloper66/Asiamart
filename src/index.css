@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  
+  --color-brand-bg: var(--bg-primary);
+  --color-brand-card: var(--bg-card);
+  --color-brand-card-hover: var(--bg-card-hover);
+  --color-brand-border: var(--border-color);
+  
+  --color-brand-red: #e50914;
+  --color-brand-red-hover: #ff1f29;
+  --color-brand-peach: #ff9e9e;
+  
+  --shadow-brand-glow: 0 0 20px rgba(229, 9, 20, 0.15);
+  --shadow-card-glow: var(--shadow-glow);
+}
+
+:root {
+  --bg-primary: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f3f5;
+  --border-color: #e5e7eb;
+  --text-primary: #18181b; /* zinc-900 */
+  --text-secondary: #52525b; /* zinc-600 */
+  --shadow-glow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --hero-opacity: 0.3;
+  --hero-blend: multiply;
+}
+
+.dark {
+  --bg-primary: #0b0b0b;
+  --bg-card: #161616;
+  --bg-card-hover: #1e1e1e;
+  --border-color: #222222;
+  --text-primary: #f4f4f5; /* zinc-100 */
+  --text-secondary: #a1a1aa; /* zinc-400 */
+  --shadow-glow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  --hero-opacity: 0.15;
+  --hero-blend: luminosity;
+}
+
+/* Custom Base Styles */
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-red);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: color-mix(in srgb, var(--bg-card) 70%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--border-color) 30%, transparent);
+}
+
+/* Skeleton animation */
+@keyframes skeleton-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-skeleton {
+  animation: skeleton-glow 1.5s ease-in-out infinite;
+}
+
+/* Bump animation for cart */
+@keyframes bump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.animate-bump {
+  animation: bump 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
