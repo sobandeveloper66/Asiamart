@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FiArrowLeft, FiLock, FiShield, FiTrash2, FiPlus, FiMinus, FiCheckCircle, FiPackage, FiTruck, FiMapPin, FiCalendar, FiShoppingBag, FiAward, FiCheck } from 'react-icons/fi';
-import { useCart } from '../context/CartContext';
+import { useCart, API_URL } from '../context/CartContext';
 import { toast } from 'react-hot-toast';
 
 const loadRazorpayScript = () => {
@@ -129,7 +129,7 @@ export default function Checkout() {
       }
 
       // 3. Call backend to create Razorpay order
-      const res = await fetch('http://localhost:5000/api/payment/create-order', {
+      const res = await fetch(`${API_URL}/payment/create-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ export default function Checkout() {
           handler: async function (response) {
             try {
               // 5. Verify signature on our backend
-              const verifyRes = await fetch('http://localhost:5000/api/payment/verify', {
+              const verifyRes = await fetch(`${API_URL}/payment/verify`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
