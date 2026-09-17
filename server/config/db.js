@@ -7,10 +7,7 @@ export const connectDB = async () => {
   } catch (error) {
     console.error(`MongoDB Connection Error: ${error.message}`);
     console.warn('⚠️ Warning: Make sure your local MongoDB service is started (e.g. running "mongod") to allow data persistence!');
-    // Allow graceful fallback instead of process.exit(1), so dbHelper can use local JSON DB
-    if (process.env.NODE_ENV === 'production') {
-      console.error('In production, failing to connect to DB is fatal. Exiting...');
-      process.exit(1);
-    }
+    // Allow graceful fallback so dbHelper can use local JSON DB
+    console.warn('⚠️ Falling back to local data storage via dbHelper.');
   }
 };
